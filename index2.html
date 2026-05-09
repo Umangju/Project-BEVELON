@@ -548,6 +548,32 @@
             { name: "태강전기(주)", type: "건설업", price: "2억", result: "2억원 승인!" },
             { name: "제이원방역", type: "서비스업", price: "9,000만", result: "9천만원 승인!" },
         ];
+    /*function doPost(e) {
+        var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+        var data = e.parameter;
+  
+    // 현재 날짜 및 시간
+    var now = new Date();
+    var date = Utilities.formatDate(now, "GMT+9", "yyyy-MM-dd HH:mm:ss");
+  
+    // 시트에 데이터 추가
+    // 시트 1행에 순서대로 날짜, 회사명, 대표자, 연락처, 지역, 업종, 매출, 자금, 상황, 문의내용 을 적어두세요.
+    sheet.appendRow([
+        date, 
+        data.company, 
+        data.owner, 
+        data.phone, 
+        data.region, 
+        data.biz_type, 
+        data.sales, 
+        data.fund, 
+        data.status, 
+        data.message
+    ]);*/
+  
+  return ContentService.createTextOutput(JSON.stringify({"result":"success"}))
+    .setMimeType(ContentService.MimeType.JSON);
+}
 
         function renderTickers() {
             const conTicker = document.getElementById('consulting-ticker');
